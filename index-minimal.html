@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!--
+* GENIUS - Ambitious Coming Soon Template
+* Build Date: November 2016
+* Last Update: November 2016
+* Author: Madeon08 for ThemeHelite
+* Copyright (C) 2016 ThemeHelite
+* This is a premium product available exclusively here : http://themeforest.net/user/Madeon08/portfolio
+-->
+<html lang="en-us" class="no-js">
+
+	<head>
+		<meta charset="utf-8">
+        <title>GENIUS - Ambitious Coming Soon Template</title>
+        <meta name="description" content="The description should optimally be between 150-160 characters.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Madeon08">
+
+        <!-- ================= Favicon ================== -->
+        <!-- Standard -->
+        <link rel="shortcut icon" href="img/favicon.png">
+        <!-- Retina iPad Touch Icon-->
+        <link rel="apple-touch-icon" sizes="144x144" href="img/favicon-retina-ipad.png">
+        <!-- Retina iPhone Touch Icon-->
+        <link rel="apple-touch-icon" sizes="114x114" href="img/favicon-retina-iphone.png">
+        <!-- Standard iPad Touch Icon--> 
+        <link rel="apple-touch-icon" sizes="72x72" href="img/favicon-standard-ipad.png">
+        <!-- Standard iPhone Touch Icon--> 
+        <link rel="apple-touch-icon" sizes="57x57" href="img/favicon-standard-iphone.png">
+
+        <!-- ============== Resources style ============== -->
+        <link rel="stylesheet" href="css/style-electric.css" />
+
+		<!-- Modernizr runs quickly on page load to detect features -->
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	
+	<body>
+
+		<!-- Fullscreen loading -->
+		<div id="loading">
+
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+
+			<div id="preloader">
+
+				<svg class="circular" viewBox="25 25 50 50">
+			      <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+			    </svg>
+
+			    <svg class="circular smaller" viewBox="25 25 50 50">
+			      <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-miterlimit="10"/>
+			    </svg>
+
+				<!-- The text displayed just below the circles is a CSS trick, you can edit the text in style.css on line 215 :-) -->
+
+			</div>
+		</div>
+
+		<!-- START - Home/Left Part -->
+		<section id="left-side">
+
+			<!-- Canvas for particles animation -->
+        	<div id="particles-js"></div>
+
+			<!-- Fullscreen slideshow -->
+			<div class="slideshow"></div>
+
+			<!-- Your logo -->
+			<img src="img/logo.png" alt="" class="brand-logo align-center entrance-anim-1" />
+
+			<div class="content align-center">
+
+				<!-- Countdown or Text, make your choice :-). Just keep the part you need. -->
+				
+				<!-- Countdown -->
+				<!-- <h1 class="text-intro for-countdown">Launching in :
+					<div id="getting-started"></div>
+				</h1> -->
+
+				<!-- Text -->
+				<h1 class="text-intro"><span class="color-title">Hey guys!</span> The Future<br>
+					is almost here...</h1>
+
+				<p class="text-intro">Here is the awesome, perfect template to present your future product or service.<br>
+					Advanced, stylish and intelligent responsive design - <strong>just genius.</strong></p>
+
+				<a data-dialog="somedialog" class="action-btn trigger blink text-intro">Notify Me!</a>
+
+			</div>
+
+			<!-- Social icons -->
+			<div class="useful-links align-center entrance-anim-2">
+
+				<a href="#"><i class="fa fa-facebook"></i></a>
+
+				<a href="#"><i class="fa fa-twitter"></i></a>
+
+				<a href="#"><i class="fa fa-google-plus"></i></a>
+
+				<a href="#"><i class="fa fa-linkedin"></i></a>
+
+			</div>
+
+		</section>
+		<!-- END - Home/Left Part -->
+
+		<!-- START - Newsletter Popup -->
+		<div id="somedialog" class="dialog">
+
+			<div class="dialog__overlay"></div>
+					
+			<div class="dialog__content">
+						
+				<div class="dialog-inner">
+							
+					<h4>You like taking the lead of line?</h4>
+							
+					<p>Being the first to know always feels great... Signing up to our newsletter gives you <strong>exclusive access to our Grand Opening!</strong></p>
+
+					<!-- Newsletter Form -->
+					<div id="subscribe">
+
+		                <form action="php/notify-me.php" id="notifyMe" method="POST">
+
+		                    <div class="form-group">
+
+		                        <div class="controls">
+		                            
+		                        	<!-- Field  -->
+		                        	<input type="text" id="mail-sub" name="email" placeholder="Click here to write your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Click here to write your email'" class="form-control email srequiredField" />
+
+		                        	<!-- Spinner top left during the submission -->
+		                        	<i class="fa fa-spinner opacity-0"></i>
+
+		                            <!-- Button -->
+		                            <button id="submit-form" class="btn btn-lg submit">Get notified</button>
+
+		                            <div class="clear"></div>
+
+		                        </div>
+
+		                    </div>
+
+		                </form>
+
+						<!-- Answer for the newsletter form is displayed in the next div, do not remove it. -->
+						<div class="block-message">
+
+							<div class="message">
+
+								<p class="notify-valid"></p>
+
+							</div>
+
+						</div>
+
+        			</div>
+        			<!-- /. Newsletter Form -->
+
+				</div>
+				<!-- /. dialog-inner -->
+
+				<!-- Button Cross to close the Newsletter Popup -->
+				<button class="close-newsletter" data-dialog-close><i class="icon ion-close-round"></i></button>
+
+			</div>
+			<!-- /. dialog__content -->
+						
+		</div>
+		<!-- END - Newsletter Popup -->
+
+	<!-- ///////////////////\\\\\\\\\\\\\\\\\\\ -->
+    <!-- ********** Resources jQuery ********** -->
+    <!-- \\\\\\\\\\\\\\\\\\\/////////////////// -->
+	
+	<!-- * Libraries jQuery, Easing and Bootstrap - Be careful to not remove them * -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.easings.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<!-- Accelerated JavaScript animation JS file -->
+	<script src="js/velocity.min.js"></script>
+
+	<!-- Newsletter plugin -->
+	<script src="js/notifyMe.js"></script>
+
+	<!-- Slideshow/Image plugin -->
+	<script src="js/vegas.js"></script>
+
+	<!-- Particles plugin -->
+	<script src="js/particles.js"></script>
+
+	<!-- Popup Newsletter Form -->
+	<script src="js/dialogFx.js"></script>
+
+	<!-- Countdown plugin -->
+	<script src="js/jquery.countdown.js"></script>
+
+	<script>
+	$("#getting-started")
+		// Year/Month/Day Hour:Minute:Second
+		.countdown("2017/10/24 15:30:30", function(event) {
+			$(this).text(
+				event.strftime('%D Days %Hh %Mm %Ss')
+			);
+	});
+	</script>
+
+	<!-- Main JS File -->
+	<script src="js/main-minimal.js"></script>
+	
+	<!--[if lt IE 10]><script type="text/javascript" src="js/placeholder.js"></script><![endif]-->
+
+	</body>
+
+</html>
