@@ -1,8 +1,8 @@
 <?php
 if($_POST) {
 
-    $to_Email = 'myemail@email.com'; // Write your email here to receive the form submissions
-    $subject = 'New message from GENIUS'; // Write the subject you'll see in your inbox
+    $to_Email = 'salegrabbrl@gmail.com'; // Write your email here to receive the form submissions
+    $subject = 'New message from customer'; // Write the subject you'll see in your inbox
 
     $name = $_POST["userName"];
     $email = $_POST["userEmail"];
