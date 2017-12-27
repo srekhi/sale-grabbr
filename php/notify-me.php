@@ -8,13 +8,13 @@
 $STORE_MODE = "mailchimp";
 
 // MailChimp API Key findable in your Mailchimp's dashboard
-$API_KEY =  "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XX0";
+$API_KEY =  $_ENV["MAIL_CHIMP_KEY"];
 			 
 // MailChimp List ID  findable in your Mailchimp's dashboard
-$LIST_ID =  "XXXXXXXXXX";
+$LIST_ID =  $_ENV["LIST_ID"];
 			 
 // After $_SERVER["DOCUMENT_ROOT"]." , write the path to your .txt to save the emails of the subscribers
-$STORE_FILE = $_SERVER["DOCUMENT_ROOT"]."/subscription-list.txt";
+$STORE_FILE = $_SERVER["DOCUMENT_ROOT"]."/subscriber-emails.txt";
 
 /* ************************************ */
 // Don't forget to check the path below
