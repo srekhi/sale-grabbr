@@ -1,7 +1,7 @@
 <?php
 if($_POST) {
 
-    $to_Email = 'salegrabbrl@gmail.com'; // Write your email here to receive the form submissions
+    $to_Email = 'salegrabbr@gmail.com'; // Write your email here to receive the form submissions
     $subject = 'New message from customer'; // Write the subject you'll see in your inbox
 
     $name = $_POST["userName"];
@@ -184,11 +184,11 @@ if($_POST) {
     if(!$Mailsending) {
         
         //If mail couldn't be sent output error. Check your PHP email configuration (if it ever happens)
-        $output = json_encode(array('type'=>'error', 'text' => '<i class="icon ion-close-round"></i> Oops! Looks like something went wrong, please check your PHP mail configuration.'));
+        $output = json_encode(array('type'=>'error', 'text' => '<i class="icon ion-close-round"></i> Oops! Looks like something went wrong, please try again in a bit :('));
         die($output);
         
     } else {
-        $output = json_encode(array('type'=>'message', 'text' => '<i class="icon ion-checkmark-round"></i> <span class="name-success">Hello '.$_POST["userName"] .'</span>, Your message has been sent, we will get back to you asap !'));
+        $output = json_encode(array('type'=>'message', 'text' => '<i class="icon ion-checkmark-round"></i> <span class="name-success">Hello '.$_POST["userName"] .'</span>, Your message has been sent, we will get back to you ASAP!'));
         die($output);
     }
 }

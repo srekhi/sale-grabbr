@@ -1,5 +1,7 @@
 <?php
 
+require('private.php');
+
 /* ******************************************************** */
 /* Please visit the help file to set correctly this file :) */
 /* ******************************************************** */
