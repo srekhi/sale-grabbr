@@ -6,7 +6,7 @@
 	$o->status = 'success';
 	echo json_encode($o);
 
-	$email_to = "myemail@email.com"; // Replace by your email address
+	$email_to = "salegrabbr@gmail.com"; // Replace by your email address
 	$email = $_POST["email"];
 
 	$text = "

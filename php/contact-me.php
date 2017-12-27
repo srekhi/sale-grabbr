@@ -1,7 +1,10 @@
 <?php
+
+require 'promo-landing-page/php/sendgrid-php/sendgrid-php.php';
+
 if($_POST) {
 
-    $to_Email = 'salegrabbr@gmail.com'; // Write your email here to receive the form submissions
+    $to_Email = new SendGrid\Email(null, 'salegrabbr@gmail.com'); // Write your email here to receive the form submissions
     $subject = 'New message from customer'; // Write the subject you'll see in your inbox
 
     $name = $_POST["userName"];
@@ -57,7 +60,7 @@ if($_POST) {
     }
 
     // Avoid too small message by changing the value of the minimum characters required. Here it's <20
-    if(strlen($_POST["userMessage"])<20) {
+    if(strlen($_POST["userMessage"])< 20) {
         $output = json_encode(array('type'=>'error', 'text' => '<i class="icon ion-close-round"></i> Too short message! Take your time and write a few words.'));
         die($output);
     }
@@ -179,8 +182,24 @@ if($_POST) {
         </table>
     </body>";
     
-    $Mailsending = @mail($to_Email, $subject, $emailcontent, $headers);
-   
+    $content = new SendGrid\Content("text/plain", $emailContent);
+    $from = new SendGrid\Email(null, "test@example.com");
+    $mail = new SendGrid\Mail($from, $subject, $to_Email, $content);
+
+    $apiKey = getenv('SENDGRID_KEY');
+    $sg = new \SendGrid($apiKey);
+
+    $response = $sg->client->mail()->send()->post($mail);
+    echo $response->statusCode();
+    echo $response->headers();
+    echo $response->body();
+
+    // $Mailsending = @mail($to_Email, $subject, $emailcontent, $headers);
+    error_log($to_Email);
+    error_log($subject);
+    error_log($emailcontent);
+    error_log($headers);
+    error_log($Mailsending);
     if(!$Mailsending) {
         
         //If mail couldn't be sent output error. Check your PHP email configuration (if it ever happens)

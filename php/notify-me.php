@@ -1,7 +1,5 @@
 <?php
 
-require('private.php');
-
 /* ******************************************************** */
 /* Please visit the help file to set correctly this file :) */
 /* ******************************************************** */
@@ -10,11 +8,9 @@ require('private.php');
 $STORE_MODE = "mailchimp";
 
 // MailChimp API Key findable in your Mailchimp's dashboard
-$API_KEY =  $_ENV["MAIL_CHIMP_KEY"];
-			 
+$API_KEY =  getenv("MAIL_CHIMP_KEY");
 // MailChimp List ID  findable in your Mailchimp's dashboard
-$LIST_ID =  $_ENV["LIST_ID"];
-			 
+$LIST_ID =  getenv("LIST_ID");
 // After $_SERVER["DOCUMENT_ROOT"]." , write the path to your .txt to save the emails of the subscribers
 $STORE_FILE = $_SERVER["DOCUMENT_ROOT"]."/subscriber-emails.txt";
 
