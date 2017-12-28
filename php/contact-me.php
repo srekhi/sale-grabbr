@@ -1,11 +1,11 @@
 <?php
 
-require 'promo-landing-page/php/sendgrid-php/sendgrid-php.php';
+require 'sendgrid-php/sendgrid-php.php';
 
 if($_POST) {
 
-    $to_Email = new SendGrid\Email(null, 'salegrabbr@gmail.com'); // Write your email here to receive the form submissions
-    $subject = 'New message from customer'; // Write the subject you'll see in your inbox
+    $to_Email = new SendGrid\Email(null, 'salegrabbr@gmail.com'); // good - Write your email here to receive the form submissions
+    $subject = 'New message from customer'; // Write the subject you'll see in your inbox - good
 
     $name = $_POST["userName"];
     $email = $_POST["userEmail"];
@@ -182,25 +182,36 @@ if($_POST) {
         </table>
     </body>";
     
-    $content = new SendGrid\Content("text/plain", $emailContent);
-    $from = new SendGrid\Email(null, "test@example.com");
-    $mail = new SendGrid\Mail($from, $subject, $to_Email, $content);
+    // $content = new SendGrid\Content("text/html", $emailContent); //good
+    // $from = new SendGrid\Email(null, "salegrabbr@gmail.com"); //good
+    // $mail = new SendGrid\Mail($from, $subject, $to_Email, $content); 
+
+    // $apiKey = getenv('SENDGRID_KEY');
+    // error_log($apiKey);
+    // $sg = new \SendGrid($apiKey);
+
+    // $response = $sg->client->mail()->send()->post($mail);
+    // echo $response->statusCode();
+    // echo $response->headers();
+    // echo $response->body();
+
+    // ex code:
+
+    $from = new SendGrid\Email(null, $email);
+    $subject = "Hello World from the SendGrid PHP Library!";
+    $to = new SendGrid\Email(null, "salegrabbr@gmail.com");
+    $content = new SendGrid\Content("text/plain", "Hello, Email!");
+    $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
     $apiKey = getenv('SENDGRID_KEY');
     $sg = new \SendGrid($apiKey);
 
     $response = $sg->client->mail()->send()->post($mail);
-    echo $response->statusCode();
-    echo $response->headers();
-    echo $response->body();
-
-    // $Mailsending = @mail($to_Email, $subject, $emailcontent, $headers);
-    error_log($to_Email);
-    error_log($subject);
-    error_log($emailcontent);
-    error_log($headers);
-    error_log($Mailsending);
-    if(!$Mailsending) {
+    $responseStatus = $response->statusCode();
+    error_log($response);
+    error_log($responseStatus);
+    
+    if(($responseStatus % 100) != 2) {
         
         //If mail couldn't be sent output error. Check your PHP email configuration (if it ever happens)
         $output = json_encode(array('type'=>'error', 'text' => '<i class="icon ion-close-round"></i> Oops! Looks like something went wrong, please try again in a bit :('));
