@@ -13,8 +13,8 @@ function myTimeout() {
     e.fn.notifyMe = function() {
 
         // Alert messages
-        var thvalid        = '<p class="notify-valid">Congrats! You are in list.<br>We will inform you as soon as we finish.</p>';
-        var thproblem      = '<p class="notify-valid">Your e-mail address is incorrect.<br>Please check it and try again.</p>';
+        var thvalid        = '<p class="notify-valid">Congrats! You are in our list.<br>We will inform you as soon as we finish.</p>';
+        var thproblem      = '<p class="notify-valid">Hmm. Something seems wrong with your email address.<br>Please double-check and try again.</p>';
         var thoops         = '<p class="notify-valid">Oops. Looks like something went wrong.<br>Please try again later.</p>';
         var thfake         = '<p class="notify-valid">This email address looks fake or invalid.<br>Please enter a real email address.</p>';
         var thavailability = '<p class="notify-valid">Service is not available at the moment.<br>Please check your internet connection or try again later.</p>';
