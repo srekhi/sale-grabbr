@@ -13,7 +13,7 @@ $(document).ready(function() {
         var user_company       = $('input[name=company]').val();
         var user_phone         = $('input[name=phone]').val();
         var user_message       = $('textarea[name=message]').val();
-        var user_newsletter    = $('input[name=newsletter]').val();
+        var user_newsletter    = $('input[name=newsletter]').is(':checked');
        
         // Datadata to be sent to server
         post_data = {

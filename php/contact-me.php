@@ -74,7 +74,7 @@ if($_POST) {
     'X-Mailer: PHP/' . phpversion();
     
     // Body of the Email received in your Inbox
-    $emailcontent = "
+    $emailContent = "
     <head>
         <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
     </head>
@@ -198,9 +198,9 @@ if($_POST) {
     // ex code:
 
     $from = new SendGrid\Email(null, $email);
-    $subject = "Hello World from the SendGrid PHP Library!";
+    $subject = "Customer feedback email";
     $to = new SendGrid\Email(null, "salegrabbr@gmail.com");
-    $content = new SendGrid\Content("text/plain", "Hello, Email!");
+    $content = new SendGrid\Content("text/html", $emailContent);
     $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
     $apiKey = getenv('SENDGRID_KEY');
@@ -208,9 +208,7 @@ if($_POST) {
 
     $response = $sg->client->mail()->send()->post($mail);
     $responseStatus = $response->statusCode();
-    error_log($response);
-    error_log($responseStatus);
-    
+
     if(($responseStatus % 100) != 2) {
         
         //If mail couldn't be sent output error. Check your PHP email configuration (if it ever happens)
