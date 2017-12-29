@@ -59,6 +59,12 @@ if($_POST) {
         }
     }
 
+    // Avoid too small message by changing the value of the minimum characters required. Here it's <20
+    if(strlen($_POST["userMessage"])<=0) {
+        $output = json_encode(array('type'=>'error', 'text' => '<i class="icon ion-close-round"></i> Please enter a message.'));
+        die($output);
+    }
+
     // Proceed with PHP email
     $headers = 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type:text/html;charset=UTF-8' . "\r\n";
