@@ -42,7 +42,7 @@ if($_POST) {
    
     // PHP validation for the fields required
     if(empty($_POST["userName"])) {
-        $output = json_encode(array('type'=>'error', 'text' => '<i class="icon ion-close-round"></i> We are sorry but your name is too short or not specified.'));
+        $output = json_encode(array('type'=>'error', 'text' => '<i class="icon ion-close-round"></i> Please enter your name.'));
         die($output);
     }
     
